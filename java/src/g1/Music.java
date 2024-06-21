@@ -15,10 +15,10 @@ public class Music extends Thread{
 	private FileInputStream fis;
 	private BufferedInputStream bis;
 	
-	public Music(boolean isLoop) {
+	public Music(String name, boolean isLoop) {
 		try {
 			this.isLoop = isLoop;
-			file = new File(Main.class.getResource("../music/Pyrite.mp3").toURI());
+			file = new File(Main.class.getResource("../music/"+name).toURI());
 			fis = new FileInputStream(file);
 			bis = new BufferedInputStream(fis);
 			player = new Player(bis);
